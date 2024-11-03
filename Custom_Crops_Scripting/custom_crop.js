@@ -1,3 +1,5 @@
+// Code from https://wiki.bedrock.dev/blocks/custom-crops
+
 import { EquipmentSlot, GameMode, world } from "@minecraft/server";
 
 /**
