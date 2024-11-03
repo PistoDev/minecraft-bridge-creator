@@ -1,5 +1,3 @@
-// Code from https://wiki.bedrock.dev/blocks/custom-crops
-
 import { EquipmentSlot, GameMode, world } from "@minecraft/server";
 
 /**
@@ -18,9 +16,9 @@ const CustomCropGrowthBlockComponent = {
         const growthChance = 1 / 3;
         if (Math.random() > growthChance) return;
 
-        const growth = block.permutation.getState("wiki:growth");
+        const growth = block.permutation.getState("bridge:growth");
         block.setPermutation(
-            block.permutation.withState("wiki:growth", growth + 1)
+            block.permutation.withState("bridge:growth", growth + 1)
         );
     },
     onPlayerInteract({ block, dimension, player }) {
@@ -35,14 +33,14 @@ const CustomCropGrowthBlockComponent = {
 
         if (player.getGameMode() === GameMode.creative) {
             // Grow crop fully
-            block.setPermutation(block.permutation.withState("wiki:growth", 7));
+            block.setPermutation(block.permutation.withState("bridge:growth", 7));
         } else {
-            let growth = block.permutation.getState("wiki:growth");
+            let growth = block.permutation.getState("bridge:growth");
 
             // Add random amount of growth
             growth += randomInt(1, maxGrowth - growth);
             block.setPermutation(
-                block.permutation.withState("wiki:growth", growth)
+                block.permutation.withState("bridge:growth", growth)
             );
 
             // Decrement stack
@@ -62,7 +60,7 @@ const CustomCropGrowthBlockComponent = {
 
 world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
     blockComponentRegistry.registerCustomComponent(
-        "wiki:custom_crop_growth",
+        "bridge:custom_crop_growth",
         CustomCropGrowthBlockComponent
     );
 });
