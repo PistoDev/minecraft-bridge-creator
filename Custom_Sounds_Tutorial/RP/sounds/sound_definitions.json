@@ -1,0 +1,43 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"attack": {
+			"category": "player",
+			"sounds": [
+				"sounds/attack"
+			]
+		},
+		"dead": {
+			"category": "neutral",
+			"sounds": [
+				"sounds/dead"
+			]
+		},
+		"walking_gras": {
+			"category": "player",
+			"sounds": [
+				"sounds/walking_gras"
+			]
+		},
+		"walking_dirt": {
+			"category": "player",
+			"subtitle": "walking_dirt",
+			"sounds": [
+				"sounds/walking_dirt"
+			]
+		},
+		"walking_stone": {
+			"category": "player",
+			"subtitle": "walking_stone",
+			"sounds": [
+				"sounds/walking_stone"
+			]
+		},
+		"autsch": {
+			"category": "player",
+			"sounds": [
+				"sounds/autsch"
+			]
+		}
+	}
+}

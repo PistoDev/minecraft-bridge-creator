@@ -1,0 +1,44 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bridge:skeleton",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/skeleton"
+			},
+			"geometry": {
+				"default": "geometry.skeleton"
+			},
+			"render_controllers": [
+				"controller.render.skeleton"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			},
+			"animations": {
+				"idle": "animation.model.idle",
+				"walk": "animation.model.walk",
+				"attack": "animation.model.attack",
+				"controller": "controller.animation.skeleton",
+				"prepare_attack": "animation.model.prep_attack",
+				"attack_from_above": "animation.model.attack_from_above"
+			},
+			"scripts": {
+				"animate": [
+					"controller"
+				]
+			},
+			"sound_effects": {
+				"attack": "attack",
+				"dead": "dead",
+				"walking_gras": "walking_gras",
+				"walking_stone": "walking_stone",
+				"walking_dirt": "walking_dirt"
+			}
+		}
+	}
+}

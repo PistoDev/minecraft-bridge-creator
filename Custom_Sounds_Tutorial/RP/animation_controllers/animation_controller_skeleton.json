@@ -1,0 +1,70 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.skeleton": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [
+						"idle"
+					],
+					"transitions": [
+						{
+							"walk": "query.ground_speed"
+						},
+						{
+							"prepattack": "query.has_target"
+						}
+					]
+				},
+				"walk": {
+					"animations": [
+						"walk"
+					],
+					"transitions": [
+						{
+							"idle": "!query.ground_speed"
+						},
+						{
+							"prepattack": "query.has_target"
+						}
+					],
+					"sound_effects": [
+						{
+							"effect": "walking_gras"
+						}
+					]
+				},
+				"attack": {
+					"animations": [
+						"attack"
+					],
+					"transitions": [
+						{
+							"idle": "variable.attack_time <= 0.0"
+						}
+					],
+					"sound_effects": [
+						{
+							"effect": "attack"
+						}
+					]
+				},
+				"prepattack": {
+					"animations": [
+						"prepare_attack",
+						"walk"
+					],
+					"transitions": [
+						{
+							"attack": "variable.has_target && variable.attack_time >= 0.1"
+						},
+						{
+							"idle": "!query.has_target"
+						}
+					]
+				}
+			}
+		}
+	}
+}

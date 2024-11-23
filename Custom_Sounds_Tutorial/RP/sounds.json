@@ -1,0 +1,15 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"bridge:skeleton": {
+				"events": {
+					"hurt": {
+						"sound": "autsch"
+					}
+				},
+				"volume": 1,
+				"pitch": 0.7
+			}
+		}
+	}
+}
